@@ -11,7 +11,7 @@ A proposta é realizar o deploy de uma aplicação web simples, desenvolvida em 
 Cada requisição será encaminhada para um pod diferente graças ao serviço de load balancer do Cluster. Isso garante a distribuição equitativa das requisições, otimizando o aproveitamento dos recursos e evitando sobrecarregar um pod específico. Vamos explorar juntos essa dinâmica de distribuição eficiente!
 
 
-## O ambiente utilizado (5)
+## O ambiente utilizado (5 itens)
 
 Esse projeto foi realizado a partir do meu Host/PC, Linux Ubuntu 23.10 (Mantic Minotaur), com as seguintes ferramentas instaladas e configuradas conforme a necessidade.
 
