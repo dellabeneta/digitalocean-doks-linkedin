@@ -66,7 +66,7 @@ Agora você configurou com sucesso o Git no seu Ubuntu e associou uma chave SSH 
 
 Se tudo estiver configurado corretamente, você receberá uma mensagem de confirmação.
 Parabéns!
->Ref.: [Documentação Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+>Ref.: [Documentação Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/)
 
 #### 2. docker
 
@@ -106,7 +106,7 @@ Teste a instalação com o comando:
 `kubectl version --client`
 
 Pronto! 
->Ref.: [Documentação Kubectl]https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux
+>Ref.: [Documentação Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux/)
 
 #### 4. terraform
 
@@ -140,7 +140,7 @@ ou
     terraform -v
 
 Foi!
->Ref.: [Documentação Terraform]https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+>Ref.: [Documentação Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli/)
 
 #### 5. doctl
 
@@ -157,4 +157,6 @@ Teste com o comando:
 Quero aproveitar o assunto 'Digital Ocean' e lembrar que você deve criar sua conta neste provider, caso ainda não possua. Após isso, acesse o menu API e crie para você um 'Personal Access Token'. Salve esse valor em um local seguro e jamais o compartilhe de qualquer forma.
 
 Por enquanto, ficamos por aqui! Por enquanto...
->Ref.: [Documentação DOCTL]https://www.digitalocean.com/community/tutorials/how-to-use-doctl-the-official-digitalocean-command-line-client-pt
+>Ref.: [Documentação DOCTL](https://www.digitalocean.com/community/tutorials/how-to-use-doctl-the-official-digitalocean-command-line-client-pt/)
+>
+>Uffa, fui!
