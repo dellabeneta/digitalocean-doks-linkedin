@@ -11,15 +11,66 @@ A proposta é realizar o deploy de uma aplicação web simples, desenvolvida em 
 Cada requisição será encaminhada para um pod diferente graças ao serviço de load balancer do Cluster. Isso garante a distribuição equitativa das requisições, otimizando o aproveitamento dos recursos e evitando sobrecarregar um pod específico. Vamos explorar juntos essa dinâmica de distribuição eficiente!
 
 
-## O ambiente utilizado (4)
+## O ambiente utilizado (5)
 
 Esse projeto foi realizado a partir do meu Host/PC, Linux Ubuntu 23.10 (Mantic Minotaur), com as seguintes ferramentas instaladas e configuradas conforme a necessidade.
 
-Vou considerar que você possui um ambiente limpo, completamente limpo e listar como você deverá seguir. Não é obrigatório, mas tente seguir a mesma ordem:
+Vou considerar que você possui um ambiente limpo, completamente limpo e listar como você deverá seguir. Como não sei se você já possui o Git instalado de configurado em seu micro, passarei também por ele.
+Não é obrigatório, mas tente seguir a mesma ordem:
 
-#### 1. docker
+#### 1. git/github
 
-Primeiro vamos instalar o 'docker', que será necessário para criarmos a imagem da aplicação e enviá-la para seu registry dentro da Digital Ocean.
+Bem, como menciono sempre, tudo tem um começo. Vamos lá então! Você precisa ter o git instalado na sua máquina e claro, uma conta aqui no Github **(crie a sua,caso não tenha)**. Vou tentar explanar os passos.
+
+Abra o terminal e execute o seguinte comando para instalar o Git:
+
+    sudo apt update 
+    sudo apt install git
+
+Você pode verificar se a instalação foi bem-sucedida digitando o seguinte comando:
+
+    git --version
+
+Configure seu nome de usuário e endereço de e-mail para associar aos seus commits. Substitua "Seu Nome" e "seu.email@example.com" pelos seus próprios dados:
+
+    git config --global user.name "Seu Nome"
+    git config --global user.email "seu.email@example.com"
+
+Para gerar uma chave SSH, use o seguinte comando:
+
+    ssh-keygen -t rsa -b 4096 -C "seu.email@example.com"
+
+Quando solicitado, pressione "Enter" para aceitar o local padrão para salvar a chave, eu indico deixar no local padrão, evitando ter que passar o path quando formos utilizar. Caso você você já possua chaves no path padrão ~/.ssh, faça backup antes.
+
+Execute o seguinte comando para adicionar a chave SSH ao agente SSH (essa dica é de outro, já perdi muito tempo da minha vida por não conhecer esses passos):
+
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+
+Use o seguinte comando para copiar a chave SSH para a área de transferência:
+
+    sudo apt install xclip
+    xclip -sel clip < ~/.ssh/id_rsa.pub
+
+#### Passo a passo para adicionar a Chave SSH no GitHub:
+
+ 1. Acesse o GitHub (https://github.com/) e faça login na sua conta. 
+ 2. No canto superior direito, clique na sua foto do perfil e selecione "Settings".
+ 3. No menu lateral esquerdo, clique em "SSH and GPG keys".
+ 4. Clique em "New SSH key" e cole a chave que você copiou anteriormente.
+ 5. Dê um nome descritivo à chave e clique em "Add SSH key".
+
+Agora você configurou com sucesso o Git no seu Ubuntu e associou uma chave SSH à sua conta do GitHub. Você pode testar a conexão usando o comando:
+
+    ssh -T git@github.com
+
+Se tudo estiver configurado corretamente, você receberá uma mensagem de confirmação.
+Parabéns!
+>Ref.: [Documentação oficial do Git: Getting Started - Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+#### 2. docker
+
+Vamos instalar o 'docker', que será necessário para criarmos a imagem da aplicação e enviá-la para seu registry dentro da Digital Ocean.
 
 Abra seu terminal e apenas aproveite o script para instalação simples:
 
@@ -38,7 +89,7 @@ Isso deve trazer algumas informações do Docker, atestando nossa instalação.
 E isso!
 > Ref.: [Documentação do Docker](https://docs.docker.com/engine/install/ubuntu/)
 
-#### 2. kubectl
+#### 3. kubectl
 
 Agora podemos instalar o 'kubectl', que será utilizado para efetuarmos manualmente o deployment da nossa aplicação web - que será a última etapa!
 
@@ -57,7 +108,7 @@ Teste a instalação com o comando:
 Pronto! 
 >Ref.: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux
 
-#### 3. terraform
+#### 4. terraform
 
 Para nosso 'terraform', vamos seguir os passos em nosso terminal, primeiro:
 
@@ -91,7 +142,7 @@ ou
 Foi!
 >Ref.: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
-#### 4. doctl
+#### 5. doctl
 
 Talvez essa seja a ferramenta mais estranha aqui em nosso setup. Eu também conheci há pouco tempo, trata-se de uma CLI da própria Digital Ocean. Ela irá nos ajudar bastante em algumas etapas que precisam de autenticação e validações com o provider cloud. Vamos la:
 
