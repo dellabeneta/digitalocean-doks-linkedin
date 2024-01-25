@@ -6,7 +6,7 @@
 
 Oi, tudo bem? Se você chegou até aqui, é porque está interessado em saber mais sobre o diagrama que viu no LinkedIn, né? Então, vamos lá!
 
-A proposta é realizar o deploy de uma aplicação web simples, desenvolvida em Python + Flask, para dentro de um Cluster Kubernetes na Digital Ocean - aproveitando o serviço gerenciado DOKS. Essa aplicação tem a função de retornar o nome do hostname para o qual a requisição web do cliente foi direcionada. No nosso contexto, esse será o hostname do pod que respondeu a essa requisição.
+A proposta é realizar o deploy de uma aplicação web simples, desenvolvida em Python + Flask, para dentro de um Cluster Kubernetes na Digital Ocean - aproveitando o serviço gerenciado DOKS. Essa aplicação tem a função de retornar o hostname do servidor para o qual a requisição web do cliente foi direcionada. No nosso contexto, o hostname não será de um servidor, propriamente, mas sim, do pod que respondeu a essa requisição.
 
 Cada requisição será encaminhada para um pod diferente graças ao serviço de load balancer do Cluster. Isso garante a distribuição equitativa das requisições, otimizando o aproveitamento dos recursos e evitando sobrecarregar um pod específico. Vamos explorar juntos essa dinâmica de distribuição eficiente!
 
