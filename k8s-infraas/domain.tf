@@ -1,3 +1,3 @@
 resource "digitalocean_domain" "domain" {
-  name = "dellabeneta.online"
+  name = "<SEU_DOMINIO>.<SUFIXO>"
 }
