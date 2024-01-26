@@ -15,17 +15,17 @@ variable "do_token" {}
 
 
 resource "digitalocean_project" "project" {
-  name = var.projectname
-  resources = [ digitalocean_kubernetes_cluster.cluster.urn,
-                digitalocean_domain.domain.urn
-            ]
+  name = var.project_name
+  resources = [digitalocean_kubernetes_cluster.cluster.urn,
+    digitalocean_domain.domain.urn
+  ]
 }
 
 resource "digitalocean_kubernetes_cluster" "cluster" {
-  name     = var.clustername
-  region   = var.clusterregion
-  version  = var.clusterversion
-  vpc_uuid = digitalocean_vpc.vpc.id
+  name         = var.cluster_name
+  region       = var.cluster_region
+  version      = var.cluster_version
+  vpc_uuid     = digitalocean_vpc.vpc.id
   auto_upgrade = false
 
   maintenance_policy {
@@ -34,8 +34,8 @@ resource "digitalocean_kubernetes_cluster" "cluster" {
   }
 
   node_pool {
-    name       = var.nodename
-    size       = var.nodesize
+    name       = var.node_name
+    size       = var.node_size
     auto_scale = true
     min_nodes  = 1
     max_nodes  = 5
@@ -44,12 +44,12 @@ resource "digitalocean_kubernetes_cluster" "cluster" {
 
 
 resource "digitalocean_vpc" "vpc" {
-  name     = var.vpcname
-  region   = var.vpcregion
-  ip_range = var.vpcrange
+  name     = var.vpc_name
+  region   = var.vpc_region
+  ip_range = var.vpc_range
 }
 
 resource "digitalocean_container_registry" "registry" {
-  name = var.registryname
-  subscription_tier_slug = var.registryslug
+  name                   = var.registry_name
+  subscription_tier_slug = var.registry_slug
 }

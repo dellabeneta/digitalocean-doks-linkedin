@@ -1,3 +1,3 @@
 resource "digitalocean_domain" "domain" {
-  name = "<SEU_DOMINIO>.<SUFIXO>"
+  name = var.domain_name
 }
