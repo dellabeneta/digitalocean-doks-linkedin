@@ -74,7 +74,7 @@ Vamos instalar o 'docker', que será necessário para criarmos a imagem da aplic
 
 Abra seu terminal e apenas aproveite o script para instalação simples:
 
-    curl -fsSL https://get.docker.com -o get-docker.sh
+    curl -fsSL https://get.docker.com | bash
     
 Como pós-instalação, utilize o usermod para que seu usuário possa rodar os comandos do Docker:
 
