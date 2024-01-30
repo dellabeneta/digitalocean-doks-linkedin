@@ -21,7 +21,7 @@ def get_hostname():
         '</div>'
         '<div style="background-color: #f0f0f0; color: black; padding: 10px; width: 100%; text-align: center; font-size: 24px; position: fixed; top: 0; left: 0;">'
         '<div id="countdown">'
-        'Esta página será atualizada em <span id="countdown-span">2</span> segundos'
+        'Klein e Sávio são um belo casal, em: <span id="countdown-span">2</span> segundos'
         '</div>'
         '</div>'
         '<script>'
