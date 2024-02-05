@@ -11,9 +11,6 @@ provider "digitalocean" {
   token = var.do_token
 }
 
-variable "do_token" {}
-
-
 resource "digitalocean_project" "project" {
   name = var.project_name
   resources = [digitalocean_kubernetes_cluster.cluster.urn,

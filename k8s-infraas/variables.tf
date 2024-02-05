@@ -1,3 +1,5 @@
+variable "do_token" {}
+
 variable "project_name" {
   default     = "k8s-project"
   description = "Nome para o projeto organizador na DO."
