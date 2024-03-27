@@ -42,7 +42,7 @@ Para gerar uma chave SSH, use o seguinte comando:
 
 Quando solicitado, pressione "Enter" para aceitar o local padrão para salvar a chave, eu indico deixar no local padrão, evitando ter que passar o path quando formos utilizar. Caso você você já possua chaves no path padrão ~/.ssh, faça backup antes.
 
-Execute o seguinte comando para adicionar a chave SSH ao agente SSH (essa dica é de outro, já perdi muito tempo da minha vida por não conhecer esses passos):
+Execute o seguinte comando para adicionar a chave SSH ao agente SSH (DIUCA DE OURO, já perdi muito tempo da minha vida por não conhecer esses passos):
 
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
